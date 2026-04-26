@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "page-mirror",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-04-23",
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/admin*", "/api/*", "/p/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "page_mirror",
+      "database_id": "a8b3fc86-63d1-40af-8b80-eed028c41f16"
+    }
+  ],
+  "vars": {
+    "SESSION_COOKIE_NAME": "page_mirror_session"
+  }
+}
